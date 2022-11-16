@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 深拷贝的方法:递归
+    // 浅拷贝的方法：for in ，Object。assign，扩展运算符...,Array.prototype.slice(),Array.prototype.concat()
+</script>
+<script>
+    //递归函数   使用递归函数实现对象的深拷贝
+		function cloneObject(obj){
+			// 临时对象  暂时存放属性 及属性值
+			var newObj = {};
+			// obj如果是基本数据类型  直接返回
+			if (typeof(obj) !== "object") {
+              return  obj
+            }
+			//如果是引用类型，遍历属性
+             else{
+                for(var attr in obj){
+              //如果某个属性还是引用数据类型  递归调用
+                newObj[attr] = cloneObject(obj[attr])
+                                    }
+                }	
+               return newObj;				
+		}
+
+
+
+        function cloneObject(obj){
+			// 临时对象  暂时存放属性 及属性值
+			var newObj = {};
+			// obj如果是基本数据类型  直接返回
+			if (typeof(obj) !== "object") {
+              return  obj
+            }
+			//如果是引用类型，遍历属性
+             else{
+                for(var attr in obj){
+              //如果某个属性还是引用数据类型  递归调用
+                newObj[attr] = cloneObject(obj[attr])
+                                    }
+                }	
+               return newObj;				
+		}
+
+        function cloneObject(obj){
+			// 临时对象  暂时存放属性 及属性值
+			var newObj = {};
+			// obj如果是基本数据类型  直接返回
+			if (typeof(obj) !== "object") {
+              return  obj
+            }
+			//如果是引用类型，遍历属性
+             else{
+                for(var attr in obj){
+              //如果某个属性还是引用数据类型  递归调用
+                newObj[attr] = cloneObject(obj[attr])
+                                    }
+                }	
+               return newObj;				
+		}
+</script>
+<script>
+// 1、原型继承
+
+// function Super(){ this.a=1 }
+// Super.prototype.say = function(){ console.log('hhh') }
+// function Sub(){}
+// Sub.prototype = new Super()
+
+// const test = new Sub()
+// console.log( test.say() )
+
+// function Super(){ this.a=[1,2] }
+// function Sub(){}
+// Sub.prototype = new Super()
+
+// const test1 = new Sub()
+// test1.a.push(3)
+// console.log(test1.a)
+// const test2 = new Sub()
+// console.log(test2.a)
+
+// 2、盗用构造函数(构造函数模式+call)
+
+// function Super = function(){ this.a = 1 }
+// function Sub = function(){
+//        Super.call(this)
+//        this.b = 2
+// }
+// const test = new Sub() 
+
+// 3、组合继承(原型继承+盗用构造函数继承)
+
+// function Super(){ this.a=[1,2] }
+// Super.prototype.say = function(){ console.log('hhh') }
+// function Sub(){
+//     Super.call(this)
+//     this b=2
+// }
+// Sub.prototype = new Super()
+ 
+// const test1 = new Sub()
+// console.log( test1.say() )
+// test1.a.push(3)
+// console.log(test1.a)
+// const test2 = new Sub()
+// console.log(test2.a)
+
+//  4、原型式继承
+
+// const obj = { a:1 }
+// function createObj(o){
+//     const Fn(){}
+//     Fn.prototype = o
+//     return new Fn()
+// }
+
+// const test = createObj(obj)
+
+
+// const obj = { a:[1,2], b:2 }
+// const test1 = Object.create(obj)
+// const test2 = Object.create(obj)
+
+// test1.a.push(3)
+// test1.b=3
+// console.log(test1.a, test2.a)
+// console.log(test1.b, test2.b)
+
+//  5、寄生式继承(构造函数模式+工厂模式)
+// function createObj(o){
+//     let clone = objectCopy(o)
+//     clone.say=function(){
+//         console.log('hhh')
+//     }
+//     return clone
+// }
+
+// const obj = { a:1 }
+// const test = createObj(obj)
+
+//  6、寄生式组合继承(盗用构造函数继承 + 原型式继承)
+
+
+// function Super(){ this.a=[1,2] }
+// Super.prototype.say = function(){ console.log('hhh') }
+// function Sub(){
+//     Super.call(this)
+//     this b=2
+// }
+// Sub.prototype = Object.create(Super.prototype)
+// Sub.prototype.constructor = Sub
+
+// const test = new Sub()
+
+
+// 二
+// 1、原型继承
+
+// function Super(){ this.a=1 }
+// Super.prototype.say = function(){ console.log('hhh') }
+// function Sub(){}
+// Sub.prototype = new Super()
+
+// const test = new Sub()
+// console.log( test.say() )
+
+// function Super(){ this.a=[1,2] }
+// function Sub(){}
+// Sub.prototype = new Super()
+
+// const test1 = new Sub()
+// test1.a.push(3)
+// console.log(test1.a)
+// const test2 = new Sub()
+// console.log(test2.a)
+
+// 2、盗用构造函数(构造函数模式+call)
+
+// function Super = function(){ this.a = 1 }
+// function Sub = function(){
+//        Super.call(this)
+//        this.b = 2
+// }
+// const test = new Sub() 
+
+// 3、组合继承(原型继承+盗用构造函数继承)
+
+// function Super(){ this.a=[1,2] }
+// Super.prototype.say = function(){ console.log('hhh') }
+// function Sub(){
+//     Super.call(this)
+//     this b=2
+// }
+// Sub.prototype = new Super()
+ 
+// const test1 = new Sub()
+// console.log( test1.say() )
+// test1.a.push(3)
+// console.log(test1.a)
+// const test2 = new Sub()
+// console.log(test2.a)
+
+//  4、原型式继承
+
+// const obj = { a:1 }
+// function createObj(o){
+//     const Fn(){}
+//     Fn.prototype = o
+//     return new Fn()
+// }
+
+// const test = createObj(obj)
+
+
+// const obj = { a:[1,2], b:2 }
+// const test1 = Object.create(obj)
+// const test2 = Object.create(obj)
+
+// test1.a.push(3)
+// test1.b=3
+// console.log(test1.a, test2.a)
+// console.log(test1.b, test2.b)
+
+//  5、寄生式继承(构造函数模式+工厂模式)
+// function createObj(o){
+//     let clone = objectCopy(o)
+//     clone.say=function(){
+//         console.log('hhh')
+//     }
+//     return clone
+// }
+
+// const obj = { a:1 }
+// const test = createObj(obj)
+
+//  6、寄生式组合继承(盗用构造函数继承 + 原型式继承)
+
+
+// function Super(){ this.a=[1,2] }
+// Super.prototype.say = function(){ console.log('hhh') }
+// function Sub(){
+//     Super.call(this)
+//     this b=2
+// }
+// Sub.prototype = Object.create(Super.prototype)
+// Sub.prototype.constructor = Sub
+
+// const test = new Sub()
+
+// 三
+
+// 1、原型继承
+
+// function Super(){ this.a=1 }
+// Super.prototype.say = function(){ console.log('hhh') }
+// function Sub(){}
+// Sub.prototype = new Super()
+
+// const test = new Sub()
+// console.log( test.say() )
+
+// function Super(){ this.a=[1,2] }
+// function Sub(){}
+// Sub.prototype = new Super()
+
+// const test1 = new Sub()
+// test1.a.push(3)
+// console.log(test1.a)
+// const test2 = new Sub()
+// console.log(test2.a)
+
+// 2、盗用构造函数(构造函数模式+call)
+
+// function Super = function(){ this.a = 1 }
+// function Sub = function(){
+//        Super.call(this)
+//        this.b = 2
+// }
+// const test = new Sub() 
+
+// 3、组合继承(原型继承+盗用构造函数继承)
+
+// function Super(){ this.a=[1,2] }
+// Super.prototype.say = function(){ console.log('hhh') }
+// function Sub(){
+//     Super.call(this)
+//     this b=2
+// }
+// Sub.prototype = new Super()
+ 
+// const test1 = new Sub()
+// console.log( test1.say() )
+// test1.a.push(3)
+// console.log(test1.a)
+// const test2 = new Sub()
+// console.log(test2.a)
+
+//  4、原型式继承
+
+// const obj = { a:1 }
+// function createObj(o){
+//     const Fn(){}
+//     Fn.prototype = o
+//     return new Fn()
+// }
+
+// const test = createObj(obj)
+
+
+// const obj = { a:[1,2], b:2 }
+// const test1 = Object.create(obj)
+// const test2 = Object.create(obj)
+
+// test1.a.push(3)
+// test1.b=3
+// console.log(test1.a, test2.a)
+// console.log(test1.b, test2.b)
+
+//  5、寄生式继承(构造函数模式+工厂模式)
+// function createObj(o){
+//     let clone = objectCopy(o)
+//     clone.say=function(){
+//         console.log('hhh')
+//     }
+//     return clone
+// }
+
+// const obj = { a:1 }
+// const test = createObj(obj)
+
+//  6、寄生式组合继承(盗用构造函数继承 + 原型式继承)
+
+
+// function Super(){ this.a=[1,2] }
+// Super.prototype.say = function(){ console.log('hhh') }
+// function Sub(){
+//     Super.call(this)
+//     this b=2
+// }
+// Sub.prototype = Object.create(Super.prototype)
+// Sub.prototype.constructor = Sub
+
+// const test = new Sub()
+</script>
+<script>
+// 一、默认绑定；独立的函数调用，我们可以理解成函数没有被绑定到某个对象上进行调用；（this指向window）
+    //  // 1.案例一:
+    // function foo() {
+    //   console.log(this)
+    //  }
+    //  foo()
+    
+    // // 2.案例二:
+    //  function foo1() {
+    //    console.log(this)
+    //  }
+    
+    //  function foo2() {
+    //    console.log(this)
+    //    foo1()
+    //  }
+    
+    //  function foo3() {
+    //    console.log(this)
+    //    foo2()
+    //  }
+    
+    //  foo3()//window  window window
+    
+    
+    // // 3.案例三:
+    //  var obj = {
+    //    name: "why",
+    //    foo: function() {
+    //      console.log(this)
+    //    }
+    //  }
+    
+    //  var bar = obj.foo
+    //  bar() // window
+    
+    
+    // // 4.案例四:
+    //  function foo() {
+    //    console.log(this)
+    //  }
+    //  var obj = {
+    //    name: "why",
+    //    foo: foo
+    //  }
+    
+    //  var bar = obj.foo
+    //  bar() 
+    // 二、隐式绑定；也就是它的调用位置中，是通过某个对象发起的函数调用(谁调用this指向谁)
+
+    //1.案例一:
+    // var obj = {
+    //   name: "why",
+    //   foo: foo
+    // }
+    
+    // obj.foo() // obj对象
+    
+    // //2.案例二:
+    // var obj = {
+    //   name: "why",
+    //   eating: function() {
+    //     console.log(this.name + "在吃东西")
+    //   },
+    //   running: function() {
+    //     console.log(obj.name + "在跑步")
+    //   }
+    // }
+    
+    // // obj.eating()
+    // // obj.running()
+    
+    // var fn = obj.eating
+    // fn()
+    
+    
+    // // 3.案例三:
+    //   var obj1 = {
+    //     name: "obj1",
+    //     foo: function() {
+    //       console.log(this)
+    //     }
+    //   }
+    
+    //   var obj2 = {
+    //     name: "obj2",
+    //     bar: obj1.foo
+    //   }
+    
+    //   obj2.bar()
+  
+//   var obj = {
+//     name: "obj"
+//   }
+  
+//   // call/apply是可以指定this的绑定对象
+//   foo.call(obj)
+//   foo.apply(obj)
+//   foo.apply("aaaa")
+  
+  
+//   // 2.call和apply有什么区别?
+//   function sum(num1, num2, num3) {
+//     console.log(num1 + num2 + num3, this)
+//   }
+  
+//   sum.call("call", 20, 30, 40)
+//   sum.apply("apply", [20, 30, 40])
+  
+
+// 五、箭头函数的绑定：箭头函数就比较特殊了，他没有明确的指向，他里面的 this 其实是根据他的上级来定的，也就是他的 this 指向等于他的上级。
+
+//   var func = () => {
+//           console.log(this);
+//         };
+//         var obj = {
+//           ber: func,
+//         };
+//         obj.ber(); //window
+
+//         var o = {
+//           a: 10,
+//           b: {
+//             a: 12,
+//             fn: function () {
+//               console.log(this.a);
+//             },
+//           },
+//         };
+//         o.b.fn();
+// 优先级
+
+// 箭头函数、new、bind、apply 和 call、欧比届点（obj.）、直接调用。
+
+// 一、默认绑定；独立的函数调用，我们可以理解成函数没有被绑定到某个对象上进行调用；（this指向window）
+    //  // 1.案例一:
+    // function foo() {
+    //   console.log(this)
+    //  }
+    //  foo()
+    
+    // // 2.案例二:
+    //  function foo1() {
+    //    console.log(this)
+    //  }
+    
+    //  function foo2() {
+    //    console.log(this)
+    //    foo1()
+    //  }
+    
+    //  function foo3() {
+    //    console.log(this)
+    //    foo2()
+    //  }
+    
+    //  foo3()//window  window window
+    
+    
+    // // 3.案例三:
+    //  var obj = {
+    //    name: "why",
+    //    foo: function() {
+    //      console.log(this)
+    //    }
+    //  }
+    
+    //  var bar = obj.foo
+    //  bar() // window
+    
+    
+    // // 4.案例四:
+    //  function foo() {
+    //    console.log(this)
+    //  }
+    //  var obj = {
+    //    name: "why",
+    //    foo: foo
+    //  }
+    
+    //  var bar = obj.foo
+    //  bar() 
+    // 二、隐式绑定；也就是它的调用位置中，是通过某个对象发起的函数调用(谁调用this指向谁)
+
+    //1.案例一:
+    // var obj = {
+    //   name: "why",
+    //   foo: foo
+    // }
+    
+    // obj.foo() // obj对象
+    
+    // //2.案例二:
+    // var obj = {
+    //   name: "why",
+    //   eating: function() {
+    //     console.log(this.name + "在吃东西")
+    //   },
+    //   running: function() {
+    //     console.log(obj.name + "在跑步")
+    //   }
+    // }
+    
+    // // obj.eating()
+    // // obj.running()
+    
+    // var fn = obj.eating
+    // fn()
+    
+    
+    // // 3.案例三:
+    //   var obj1 = {
+    //     name: "obj1",
+    //     foo: function() {
+    //       console.log(this)
+    //     }
+    //   }
+    
+    //   var obj2 = {
+    //     name: "obj2",
+    //     bar: obj1.foo
+    //   }
+    
+    //   obj2.bar()
+  
+//   var obj = {
+//     name: "obj"
+//   }
+  
+//   // call/apply是可以指定this的绑定对象
+//   foo.call(obj)
+//   foo.apply(obj)
+//   foo.apply("aaaa")
+  
+  
+//   // 2.call和apply有什么区别?
+//   function sum(num1, num2, num3) {
+//     console.log(num1 + num2 + num3, this)
+//   }
+  
+//   sum.call("call", 20, 30, 40)
+//   sum.apply("apply", [20, 30, 40])
+  
+
+// 五、箭头函数的绑定：箭头函数就比较特殊了，他没有明确的指向，他里面的 this 其实是根据他的上级来定的，也就是他的 this 指向等于他的上级。
+
+//   var func = () => {
+//           console.log(this);
+//         };
+//         var obj = {
+//           ber: func,
+//         };
+//         obj.ber(); //window
+
+//         var o = {
+//           a: 10,
+//           b: {
+//             a: 12,
+//             fn: function () {
+//               console.log(this.a);
+//             },
+//           },
+//         };
+//         o.b.fn();
+// 优先级
+
+// 箭头函数、new、bind、apply 和 call、欧比届点（obj.）、直接调用
+
+
+// 一、默认绑定；独立的函数调用，我们可以理解成函数没有被绑定到某个对象上进行调用；（this指向window）
+    //  // 1.案例一:
+    // function foo() {
+    //   console.log(this)
+    //  }
+    //  foo()
+    
+    // // 2.案例二:
+    //  function foo1() {
+    //    console.log(this)
+    //  }
+    
+    //  function foo2() {
+    //    console.log(this)
+    //    foo1()
+    //  }
+    
+    //  function foo3() {
+    //    console.log(this)
+    //    foo2()
+    //  }
+    
+    //  foo3()//window  window window
+    
+    
+    // // 3.案例三:
+    //  var obj = {
+    //    name: "why",
+    //    foo: function() {
+    //      console.log(this)
+    //    }
+    //  }
+    
+    //  var bar = obj.foo
+    //  bar() // window
+    
+    
+    // // 4.案例四:
+    //  function foo() {
+    //    console.log(this)
+    //  }
+    //  var obj = {
+    //    name: "why",
+    //    foo: foo
+    //  }
+    
+    //  var bar = obj.foo
+    //  bar() 
+    // 二、隐式绑定；也就是它的调用位置中，是通过某个对象发起的函数调用(谁调用this指向谁)
+
+    //1.案例一:
+    // var obj = {
+    //   name: "why",
+    //   foo: foo
+    // }
+    
+    // obj.foo() // obj对象
+    
+    // //2.案例二:
+    // var obj = {
+    //   name: "why",
+    //   eating: function() {
+    //     console.log(this.name + "在吃东西")
+    //   },
+    //   running: function() {
+    //     console.log(obj.name + "在跑步")
+    //   }
+    // }
+    
+    // // obj.eating()
+    // // obj.running()
+    
+    // var fn = obj.eating
+    // fn()
+    
+    
+    // // 3.案例三:
+    //   var obj1 = {
+    //     name: "obj1",
+    //     foo: function() {
+    //       console.log(this)
+    //     }
+    //   }
+    
+    //   var obj2 = {
+    //     name: "obj2",
+    //     bar: obj1.foo
+    //   }
+    
+    //   obj2.bar()
+  
+//   var obj = {
+//     name: "obj"
+//   }
+  
+//   // call/apply是可以指定this的绑定对象
+//   foo.call(obj)
+//   foo.apply(obj)
+//   foo.apply("aaaa")
+  
+  
+//   // 2.call和apply有什么区别?
+//   function sum(num1, num2, num3) {
+//     console.log(num1 + num2 + num3, this)
+//   }
+  
+//   sum.call("call", 20, 30, 40)
+//   sum.apply("apply", [20, 30, 40])
+  
+
+// 五、箭头函数的绑定：箭头函数就比较特殊了，他没有明确的指向，他里面的 this 其实是根据他的上级来定的，也就是他的 this 指向等于他的上级。
+
+//   var func = () => {
+//           console.log(this);
+//         };
+//         var obj = {
+//           ber: func,
+//         };
+//         obj.ber(); //window
+
+//         var o = {
+//           a: 10,
+//           b: {
+//             a: 12,
+//             fn: function () {
+//               console.log(this.a);
+//             },
+//           },
+//         };
+//         o.b.fn();
+// 优先级
+
+// 箭头函数、new、bind、apply 和 call、欧比届点（obj.）、直接调用
+</script>
+<script>
+    // 原型
+    // function Person () {
+    
+    // }
+
+    
+    // function Person () {
+    // //...
+    // }
+    // const person = new Person() // 通过new操作符创建一个实例
+    //  console.log(person instanceof Person) // true
+
+    //  在原型上定义的属性和方法，在实例上能够继承这些属性和方法。
+
+    //  function Person () {
+    
+    //  }
+    //  Person.prototype.sayHi = 'Hi'
+    //  const person = new Person() // 通过new操作符创建一个实例
+    //  console.log(person.sayHi)   // Hi
+    //  console.log(person.__proto__ === Person.prototype) // true
+
+    // function Person () {
+    // }
+    // Person.prototype.sayHi = 'Hi'
+    // const person = new Person() // 通过new操作符创建一个实例
+    // console.log(person.sayHi)   // Hi
+    // console.log(person.__proto__ === Person.prototype)   // true
+    // console.log(Person.prototype.constructor === Person) // true
+    // const obj = {}
+    // console.log(obj.__proto__ === Object.prototype) // true
+    // console.log(obj.toString)  // ƒ toString() { [native code] }，toString是继承Object.prototype上的方法
+
+    // const obj2 = new Object()
+    // console.log(obj2.__proto__ === Object.prototype) // true
+    // console.log(obj2.toString) // ƒ toString() { [native code] }
+
+     // 原型
+    // function Person () {
+    
+    // }
+
+    
+    // function Person () {
+    // //...
+    // }
+    // const person = new Person() // 通过new操作符创建一个实例
+    //  console.log(person instanceof Person) // true
+
+    //  在原型上定义的属性和方法，在实例上能够继承这些属性和方法。
+
+    //  function Person () {
+    
+    //  }
+    //  Person.prototype.sayHi = 'Hi'
+    //  const person = new Person() // 通过new操作符创建一个实例
+    //  console.log(person.sayHi)   // Hi
+    //  console.log(person.__proto__ === Person.prototype) // true
+
+    // function Person () {
+    // }
+    // Person.prototype.sayHi = 'Hi'
+    // const person = new Person() // 通过new操作符创建一个实例
+    // console.log(person.sayHi)   // Hi
+    // console.log(person.__proto__ === Person.prototype)   // true
+    // console.log(Person.prototype.constructor === Person) // true
+    // const obj = {}
+    // console.log(obj.__proto__ === Object.prototype) // true
+    // console.log(obj.toString)  // ƒ toString() { [native code] }，toString是继承Object.prototype上的方法
+
+    // const obj2 = new Object()
+    // console.log(obj2.__proto__ === Object.prototype) // true
+    // console.log(obj2.toString) // ƒ toString() { [native code] }
+
+
+     // 原型
+    // function Person () {
+    
+    // }
+
+    
+    // function Person () {
+    // //...
+    // }
+    // const person = new Person() // 通过new操作符创建一个实例
+    //  console.log(person instanceof Person) // true
+
+    //  在原型上定义的属性和方法，在实例上能够继承这些属性和方法。
+
+    //  function Person () {
+    
+    //  }
+    //  Person.prototype.sayHi = 'Hi'
+    //  const person = new Person() // 通过new操作符创建一个实例
+    //  console.log(person.sayHi)   // Hi
+    //  console.log(person.__proto__ === Person.prototype) // true
+
+    // function Person () {
+    // }
+    // Person.prototype.sayHi = 'Hi'
+    // const person = new Person() // 通过new操作符创建一个实例
+    // console.log(person.sayHi)   // Hi
+    // console.log(person.__proto__ === Person.prototype)   // true
+    // console.log(Person.prototype.constructor === Person) // true
+    // const obj = {}
+    // console.log(obj.__proto__ === Object.prototype) // true
+    // console.log(obj.toString)  // ƒ toString() { [native code] }，toString是继承Object.prototype上的方法
+
+    // const obj2 = new Object()
+    // console.log(obj2.__proto__ === Object.prototype) // true
+    // console.log(obj2.toString) // ƒ toString() { [native code] }
+</script>
+</html>
