@@ -1,0 +1,88 @@
+一、版本控制分类
+   版本控制是一种用于管理对文件目录内容的修改历史，方便查看更改记录
+   实现跨区域多人协同开发
+   追踪和记载一个或者多个历史记录
+   组织和保护源代码和文档
+
+1、本地版本控制
+   记录文件每次更新适合个人使用
+
+2、集中版本控制
+   版本数据都保存在服务器上协同开发者从服务器上同步更新上传自己的修改
+   没有网络 用户就看不到历史版本 没办法切换版本验证 或者不同分支工作
+   缺点：所有的历史代码都放在服务器种 一旦服务器崩溃 代码就会丢失 且不能找回
+   优点：个人本地占用储存空间较小，只需要保存自己修改的内容即可
+
+3、分布式版本控制
+   每个人都有全部的代码
+   所有版本信息全部同步到每个用户 可以在本地查看所有版本历史 
+   可以离线在本地提交 如果服务器崩溃 只要有一个用户保存有所有版本数据就可以恢复所有数据
+   但是会增加本地存储空间  
+   不会因为服务器损坏或者网络问题 造成不能工作的情况
+
+
+二、git和svn的区别
+   svn是集中版本控制系统 版本集中放在中央服务器 先要从服务器得到最新版本，然后工作，
+   工作完后再把自己昨晚的推送到服务器 必须要联网 对网络宽带要求高
+
+   git是分布式版本控制系统 没中央服务器 每个人电脑就是完整的版本库 工作时不需要联网
+   版本都在自己电脑上 如果A和B同时修改 A文件 只需要推送给对方 就可以互相看到对方的修改
+   git可以直接看到更新了那些代码和文件
+
+
+三、下载启动git
+  下载 git      https://git-scm.com/ 
+   镜像下载：http://npm.taobao.org/mirrors/git-for-windows/
+
+   启动git 鼠标右键就有 git bash :unix与linux命令行 使用多 推荐多
+   git cmd :windows风格命令行
+   git GUI 图形界git 
+
+
+四、常用的linux 命令   (里牛克斯)
+   cd 进入目录
+   cd.. 回退上一个目录
+   pwd:显示当前所在目录路径
+   ls ll 都是列出当前文件夹所有文件  (ll更详细)
+   touch: 新建一个文件 touch index.js
+   rm: 删除一个文件 rm index.js
+   mkdir: 新建一个文件夹  mkdir 2112
+   rm-r: 删除一个文件夹 rm-r 2112
+   mv 移动文件位置 mv index.html src  index.html时要移动的文件 src是目标文件夹 要保证文件
+   和文件夹在同一个目录下
+   reset  初始化终端 清屏
+   clear 清屏  只清除屏幕
+   history 查看历史命令 
+   help 帮助 显示所有的命令
+   exit 退出
+   # 注释
+   ls 查看桌面所有文件
+
+
+五、git文件操作 四种状态
+   Untracke 未跟踪 此文件在文件夹中 但并没有加入到git库 不参与版本控制 通过 git add状态变为 staged
+   unmodify 文件已经入库 未修改 即版本 即版本库种文件快照内容与文件夹种完全一致
+   这种类型文件有两种去处 如果他被修改 而变成modified 如果使用 git rm移出版本库 则成为 ubtrached
+   modified 文件已修改, 仅仅是修改  并没有进行其他的操作这个文件也有两个去处 通过git add可进入
+   暂存staged状态  使用git checkout 则丢弃修改过  返回到unmodify状态 这个git checkout即从库中取出文件, 覆盖当前修改
+   staged 暂存状态 执行 git commit 讲修改同步到库种 这时库种的文件和本地文件又变为一致 文件unmodify状态 执行git
+   reset HEAD ffilename 取消缓存 文件状态未modified
+
+
+六、git的三个工作区域
+  git 本地又三个工作区域 工作目录(working directory) 暂存区(stage/index) 资源库(repository 或者git directory)
+
+
+七、克隆和git命令
+    克隆远程仓库  git clone [url] 
+
+    git命令 
+    git add . 添加所有文件到暂定区 
+    git status 可以先看下文件状态 
+    然后 git commit -m '修改的内容'
+    git push 提交修改内容
+
+八、使用码云
+   github有墙比较慢 一般使用 gitee
+   鼠标右键 git bash 里面输入ssh-keygen -t rsa
+   在ssh文件夹里复制密钥  然后粘贴在文件夹中 
