@@ -7,12 +7,12 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: "/",
-    redirect: '/manage',  // 重定向:重新指向其它path,会改变网址
+    redirect: '/manage',  // 重定向
   },
   {
     path: '/',
     name: 'home',
-    component: HomeView,
+    component: Home,
     children: [
       {
         // 首页
