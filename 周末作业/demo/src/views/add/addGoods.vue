@@ -4,14 +4,13 @@
       <!-- 添加商品 -->
       <el-header>
         <!-- 面包屑 -->
-       <el-breadcrumb separator="/" class="bread">
-         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-         <el-breadcrumb-item>添加数据</el-breadcrumb-item>
-         <el-breadcrumb-item>添加商品</el-breadcrumb-item>
-       </el-breadcrumb>
+        <el-breadcrumb separator="/" class="bread">
+          <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+          <el-breadcrumb-item>添加数据</el-breadcrumb-item>
+          <el-breadcrumb-item>添加商品</el-breadcrumb-item>
+        </el-breadcrumb>
         <div class="icon"></div>
       </el-header>
-
 
       <!-- 选择食品种类 -->
       <el-main class="demo-ruleForm">
@@ -19,7 +18,11 @@
         <!-- 表单 -->
         <el-form ref="form" :model="form" label-width="80px">
           <el-form-item label="食品种类" style="margin-top: 20px">
-            <el-select v-model="form.type" placeholder="请选择" class="top-type">
+            <el-select
+              v-model="form.type"
+              placeholder="请选择"
+              class="top-type"
+            >
               <el-option label="123" value=""></el-option>
               <el-option label="456" value=""></el-option>
               <el-option label="牛马" value=""></el-option>
@@ -70,7 +73,11 @@
           </el-form-item>
           <!-- 食品特点 -->
           <el-form-item label="食品特点" style="margin-top: 20px">
-            <el-select v-model="form1.type" placeholder="请选择" class="top-type1">
+            <el-select
+              v-model="form1.type"
+              placeholder="请选择"
+              class="top-type1"
+            >
               <el-option label="新品" value="shanghai"></el-option>
               <el-option label="招牌" value="beijing"></el-option>
             </el-select>
@@ -83,16 +90,43 @@
             </el-radio-group>
           </el-form-item>
 
-          <el-form-item  label="包装费"  v-if="this.form1.Specifications == '单规格'">
-            <el-input-number v-model="form1.num" controls-position="right" :min="1" :max="100"></el-input-number>
+          <el-form-item
+            label="包装费"
+            v-if="this.form1.Specifications == '单规格'"
+          >
+            <el-input-number
+              v-model="form1.num"
+              controls-position="right"
+              :min="1"
+              :max="100"
+            ></el-input-number>
           </el-form-item>
-          <el-form-item label="价格" v-if="this.form1.Specifications == '单规格'">
-            <el-input-number v-model="form1.num1" controls-position="right" :min="1" :max="100"></el-input-number>
+          <el-form-item
+            label="价格"
+            v-if="this.form1.Specifications == '单规格'"
+          >
+            <el-input-number
+              v-model="form1.num1"
+              controls-position="right"
+              :min="1"
+              :max="100"
+            ></el-input-number>
           </el-form-item>
 
-          <el-button type="primary" @click="dialogVisible2 = true" class="guige" v-if="this.form1.Specifications == '多规格'">添加规格</el-button>
+          <el-button
+            type="primary"
+            @click="dialogVisible2 = true"
+            class="guige"
+            v-if="this.form1.Specifications == '多规格'"
+            >添加规格</el-button
+          >
 
-          <el-table :data="tableData" stripe style="width: 100%" v-if="this.form1.Specifications == '多规格'">
+          <el-table
+            :data="tableData"
+            stripe
+            style="width: 100%"
+            v-if="this.form1.Specifications == '多规格'"
+          >
             <el-table-column prop="name" label="规格" width="180">
             </el-table-column>
             <el-table-column prop="num" label="包装费" width="180">
@@ -100,12 +134,19 @@
             <el-table-column prop="num1" label="价格"> </el-table-column>
             <el-table-column label="操作">
               <template slot-scope="scope">
-                <el-button size="mini" type="danger" @click="delAll(scope.$index)">删除</el-button>
+                <el-button
+                  size="mini"
+                  type="danger"
+                  @click="delAll(scope.$index)"
+                  >删除</el-button
+                >
               </template>
             </el-table-column>
           </el-table>
           <!-- 规格表格 -->
-          <el-button type="primary" @click="submitForm('form1')">确定添加商品</el-button>
+          <el-button type="primary" @click="submitForm('form1')"
+            >确定添加商品</el-button
+          >
         </el-form>
       </el-main>
     </el-container>
@@ -169,7 +210,7 @@ export default {
       form: {
         type: "",
         types: "",
-        text: ""
+        text: "",
       },
       // 表单内容
       dialogVisible: false, //刚进入页面弹出的框
@@ -181,10 +222,10 @@ export default {
         type: "",
         Specifications: "单规格",
         num: "",
-        num1: 20
+        num1: 20,
       },
       rules: {
-        name: [{ required: true, message: "请输入活动名称", trigger: "blur" }]
+        name: [{ required: true, message: "请输入活动名称", trigger: "blur" }],
       },
       dialogVisible4: false,
       dialogImageUrl1: "",
@@ -192,8 +233,8 @@ export default {
       from: {
         name: "",
         num: "",
-        num1: 20
-      }
+        num1: 20,
+      },
       // 添加规格
     };
   },
@@ -211,7 +252,7 @@ export default {
       this.tableData.push({
         name: this.from.name,
         num: this.from.num,
-        num1: this.from.num1
+        num1: this.from.num1,
       });
       this.dialogVisible2 = false;
     },
@@ -221,18 +262,18 @@ export default {
     },
     // 规格表格得删除
     submitForm(formName) {
-      this.$refs[formName].validate(valid => {
+      this.$refs[formName].validate((valid) => {
         if (valid) {
           this.$message({
             message: "恭喜你，这是一条成功消息",
-            type: "success"
+            type: "success",
           });
         } else {
           alert("请输入内容");
           return false;
         }
       });
-    }
+    },
     // 添加商品
   },
   created() {},
@@ -241,11 +282,11 @@ export default {
   },
   components: {},
   computed: {},
-  watch: {}
+  watch: {},
 };
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .el-header {
   background: #eff2f7;
   width: 100%;
@@ -288,4 +329,3 @@ export default {
   margin-left: 300px;
 }
 </style>
-

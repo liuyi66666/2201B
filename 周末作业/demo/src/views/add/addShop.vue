@@ -161,7 +161,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import {Mycity} from "../../utils/api.js"
 export default {
   data() {
     return {
@@ -248,21 +248,14 @@ export default {
     },
   },
   created() {
-    axios({
-      url: "https://elm.cangdu.org/shopping/v2/restaurant/category",
-      method: "GET",
-    }).then((res) => {
-      // console.log(res);
+    Mycity().then(res=>{
       this.list = res.data;
-    });
-    axios({
-      url: "https://elm.cangdu.org/v1/cities?type=guess",
-      method: "GET",
-    }).then((res) => {
-      // console.log(res);
+    })
+    // 请求城市接口
+    Addcity().then(res=>{
       this.address = res.data.name;
-    });
-    // 请求城市接口i
+    })
+    
   },
   mounted() {},
   components: {},

@@ -39,28 +39,19 @@
 </template>
 
 <script>
-import axios from "axios";
+import {Administretorye} from "../../utils/api.js"
 export default {
   data() {
     return {
       // 获取的数据
       adminList: [],
         //每页5条数据
-      pageSize: 5,
+      pageSize: 10,
       //默认第1页
       pageNum: 1
     };
   },
   methods: {
-    // 请求数据
-    getAdmin() {
-      axios
-        .get("https://elm.cangdu.org/admin/all?offset=0&limit=20")
-        .then(res => {
-          console.log(res);
-          this.adminList = res.data.data;
-        });
-    },
     // 分页
     handleSizeChange(val) {
       //   console.log(val);
@@ -72,7 +63,9 @@ export default {
     },
   },
   created() {
-    this.getAdmin();
+    Administretorye().then(res=>{
+      this.adminList = res.data.data;
+    })
   },
   mounted() {},
   components: {},

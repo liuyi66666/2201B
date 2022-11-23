@@ -42,26 +42,19 @@
 </template>
 
 <script>
-import axios from "axios";
+import {getList} from "../../utils/api.js"
 export default {
   data() {
     return {
       // 获取到的数据
       goodsList: [],
       //每页5条数据
-      pageSize: 5,
+      pageSize: 10,
       //默认第1页
       pageNum: 1
     };
   },
   methods: {
-    // 获取用户列表的数据
-    getList() {
-      axios.get("https://elm.cangdu.org/v1/users/list").then(res => {
-        // console.log(res);
-        this.goodsList = res.data;
-      });
-    },
     // 分页的
     handleSizeChange(val) {
       // console.log(val);
@@ -73,7 +66,10 @@ export default {
     }
   },
   created() {
-    this.getList();
+  //  用户列表数据
+    getList().then(res=>{
+        this.goodsList = res.data;
+    })
   },
   mounted() {},
   components: {},

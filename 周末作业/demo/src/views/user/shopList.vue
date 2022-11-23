@@ -129,6 +129,7 @@
 </template>
 
 <script>
+import {getShop} from "../../utils/api.js"
 import axios from "axios";
 export default {
   data() {
@@ -138,7 +139,7 @@ export default {
       address: "", //城市的
       dialogVisible: false, //编辑模态框
      //每页5条数据
-      pageSize: 5,
+      pageSize: 10,
       //默认第1页
       pageNum: 1,
       // 分页的数据
@@ -154,13 +155,6 @@ export default {
     };
   },
   methods: {
-    // 获取数据
-    getShop(){
-    axios.get('https://elm.cangdu.org/shopping/restaurants?latitude=35.895161&longitude=115.498688&offset=0&limit=20').then(res=>{
-      // console.log(res);
-      this.list = res.data;
-    })
-    },
     handleRemove(file, fileList) {
       console.log(file, fileList);
     },
@@ -220,14 +214,15 @@ export default {
     },
   },
   created() {
-   this.getShop()
+  getShop().then(res=>{
+    this.list = res.data;
+  })
   },
   mounted() {
     axios({
       url: "https://elm.cangdu.org/v1/cities?type=guess",
       method: "GET",
     }).then((res) => {
-      // console.log(res);
       this.address = res.data.name;
     });
   },

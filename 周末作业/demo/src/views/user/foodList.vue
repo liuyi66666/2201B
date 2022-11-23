@@ -157,7 +157,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import {Foodye} from "../../utils/api.js"
 export default {
   data() {
     return {
@@ -172,7 +172,7 @@ export default {
       //添加规格的
       dialogVisible2: false,
       //每页5条数据
-      pageSize: 5,
+      pageSize: 10,
       //默认第1页
       pageNum: 1,
       // 编辑模态框
@@ -199,17 +199,6 @@ export default {
     };
   },
   methods: {
-    // 获取数据
-    fooList() {
-      axios
-        .get(
-          "https://elm.cangdu.org/shopping/v2/foods?offset=0&limit=20&restaurant_id=undefined"
-        )
-        .then(res => {
-          // console.log(res);
-          this.list = res.data;
-        });
-    },
     // 添加数据的包装费
     handleChange(val) {
       // console.log(val);
@@ -285,7 +274,9 @@ export default {
     }
   },
   created() {
-    this.fooList();
+    Foodye().then(res=>{
+      this.list = res.data;
+    })
   },
   mounted() {},
   components: {},
