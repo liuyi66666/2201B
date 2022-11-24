@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function timeout(){
+        //     return "hello wrold"
+        // }
+
+        // async  function aaa(){
+        //     let res =await timeout()
+        //     console.log(res)
+        // }
+        // aaa()
+
+    //     function fn1(){
+    //         return 10
+    //     }
+    //     function fn2(num){
+    //         return 10+num
+    //     }
+    //     function fn3(num){
+    //         return 10+num
+    //     }
+    //     function fn4(num){
+    //         return 10+num
+    //     }
+    //     function fn5(num){
+    //         return 10+num
+    //     }
+    //     async function fn6(){
+    //         let res=await fn1()
+    //         res=await fn2(res)
+    //         res=await fn3(res)
+    //         res=await fn4(res)
+    //         res=await fn5(res)
+    //         console.log(res);
+    //   }
+    //     fn6()
+    //     const getPeach='hahah1'
+    //     const getPeachs='啦啦啦'
+    //     const getTroop='你好啊'
+    // function  getPeach(){
+    //     return new Promise(function(resolve,reject){
+    //         setTimeout(()=>{
+    //             resolve(getPeachs)
+    //         })
+    //     })
+    // }
+
+    // async function getTroop(){
+    //     console.log('执行')
+    //     let result=await getPeach()
+    //     console.log(result)
+
+    // }
+    // getTroop()
+
+
+    // const map =new Map(
+    //    [
+    //    ['name','张三']
+    //    ['title','Auther']
+    //    ]
+    // )
+    // console.log(map.size)
+    // map.size
+    // map.has('name')
+    // map.get('name')
+    // map.has('title')
+    // map.get('title')
+
+    // const map =new Map()
+
+    // map.set('nane','小兰')
+    // map.set('change',function(){
+    //     console.log('我想去西藏')
+    // })
+    // let key  ={
+    //     school:'SCHOOL'
+    // }
+    // map.set(key,['清华','北大','人大','北航'])
+    // map.delete('name')
+    // console.log(map)
+    // console.log(map.has('change'))
+    // console.log(map.has('keys'))
+
+    // console.log(map.get('change'))
+    // console.log(map.get(key))
+    // console.log(map.size)
+    // for(let key of map){
+    //     console.log(key)
+    // }
+
+    // let set =new Set()
+    // set.add('清华')
+    // set.add('北大')
+    // set.add('北大103')
+    // set.add('北大104')
+    // set.add('北大105')
+    // console.log(set)
+    // 删除元素
+    // set.delete('清华')
+    // console.log(set)
+    // console.log(set.has('北大104'))
+    //     for(let key of set){
+    //         console.log(key)
+    //     }
+
+    //     // 去重
+    //     let array=[1,1,1,,1,2,2,5,8,57,]
+    //     let result=new Set(array)
+    //     // 将set变为数组
+    //     let b=[...result]
+    //     console.log(b)
+
+    //     let c=Array.from(result)
+    //     console.log(c)
+
+    //     let d=Array.of(1,2,5,5,5,6,8,7,9)
+    //     console.log(d)
+
+        // function timeout(){
+        //     return "hello wrold"
+        // }
+
+        // async  function aaa(){
+        //     let res =await timeout()
+        //     console.log(res)
+        // }
+        // aaa()
+
+    //     function fn1(){
+    //         return 10
+    //     }
+    //     function fn2(num){
+    //         return 10+num
+    //     }
+    //     function fn3(num){
+    //         return 10+num
+    //     }
+    //     function fn4(num){
+    //         return 10+num
+    //     }
+    //     function fn5(num){
+    //         return 10+num
+    //     }
+    //     async function fn6(){
+    //         let res=await fn1()
+    //         res=await fn2(res)
+    //         res=await fn3(res)
+    //         res=await fn4(res)
+    //         res=await fn5(res)
+    //         console.log(res);
+    //   }
+    //     fn6()
+    //     const getPeach='hahah1'
+    //     const getPeachs='啦啦啦'
+    //     const getTroop='你好啊'
+    // function  getPeach(){
+    //     return new Promise(function(resolve,reject){
+    //         setTimeout(()=>{
+    //             resolve(getPeachs)
+    //         })
+    //     })
+    // }
+
+    // async function getTroop(){
+    //     console.log('执行')
+    //     let result=await getPeach()
+    //     console.log(result)
+
+    // }
+    // getTroop()
+
+
+    // const map =new Map(
+    //    [
+    //    ['name','张三']
+    //    ['title','Auther']
+    //    ]
+    // )
+    // console.log(map.size)
+    // map.size
+    // map.has('name')
+    // map.get('name')
+    // map.has('title')
+    // map.get('title')
+
+    // const map =new Map()
+
+    // map.set('nane','小兰')
+    // map.set('change',function(){
+    //     console.log('我想去西藏')
+    // })
+    // let key  ={
+    //     school:'SCHOOL'
+    // }
+    // map.set(key,['清华','北大','人大','北航'])
+    // map.delete('name')
+    // console.log(map)
+    // console.log(map.has('change'))
+    // console.log(map.has('keys'))
+
+    // console.log(map.get('change'))
+    // console.log(map.get(key))
+    // console.log(map.size)
+    // for(let key of map){
+    //     console.log(key)
+    // }
+
+    // let set =new Set()
+    // set.add('清华')
+    // set.add('北大')
+    // set.add('北大220')
+    // set.add('北大221')
+    // set.add('北大222')
+    // console.log(set)
+    // // 删除元素
+    // set.delete('清华')
+    // console.log(set)
+    // console.log(set.has('北大221'))
+    //     for(let key of set){
+    //         console.log(key)
+    //     }
+
+    //     // 去重
+    //     let array=[1,1,1,,1,2,2,5,8,57,]
+    //     let result=new Set(array)
+    //     // 将set变为数组
+    //     let b=[...result]
+    //     console.log(b)
+
+    //     let c=Array.from(result)
+    //     console.log(c)
+
+    //     let d=Array.of(1,2,5,5,5,6,8,7,9)
+    //     console.log(d)
+
+
+    // function timeout(){
+        //     return "hello wrold"
+        // }
+
+        // async  function aaa(){
+        //     let res =await timeout()
+        //     console.log(res)
+        // }
+        // aaa()
+
+    //     function fn1(){
+    //         return 10
+    //     }
+    //     function fn2(num){
+    //         return 10+num
+    //     }
+    //     function fn3(num){
+    //         return 10+num
+    //     }
+    //     function fn4(num){
+    //         return 10+num
+    //     }
+    //     function fn5(num){
+    //         return 10+num
+    //     }
+    //     async function fn6(){
+    //         let res=await fn1()
+    //         res=await fn2(res)
+    //         res=await fn3(res)
+    //         res=await fn4(res)
+    //         res=await fn5(res)
+    //         console.log(res);
+    //   }
+    //     fn6()
+    //     const getPeach='hahah1'
+    //     const getPeachs='啦啦啦'
+    //     const getTroop='你好啊'
+    // function  getPeach(){
+    //     return new Promise(function(resolve,reject){
+    //         setTimeout(()=>{
+    //             resolve(getPeachs)
+    //         })
+    //     })
+    // }
+
+    // async function getTroop(){
+    //     console.log('执行')
+    //     let result=await getPeach()
+    //     console.log(result)
+
+    // }
+    // getTroop()
+
+
+    // const map =new Map(
+    //    [
+    //    ['name','张三']
+    //    ['title','Auther']
+    //    ]
+    // )
+    // console.log(map.size)
+    // map.size
+    // map.has('name')
+    // map.get('name')
+    // map.has('title')
+    // map.get('title')
+
+    // const map =new Map()
+
+    // map.set('nane','小兰')
+    // map.set('change',function(){
+    //     console.log('我想去西藏')
+    // })
+    // let key  ={
+    //     school:'SCHOOL'
+    // }
+    // map.set(key,['清华','北大','人大','北航'])
+    // map.delete('name')
+    // console.log(map)
+    // console.log(map.has('change'))
+    // console.log(map.has('keys'))
+
+    // console.log(map.get('change'))
+    // console.log(map.get(key))
+    // console.log(map.size)
+    // for(let key of map){
+    //     console.log(key)
+    // }
+
+    // let set =new Set()
+    // set.add('清华')
+    // set.add('北大')
+    // set.add('北大338')
+    // set.add('北大339')
+    // set.add('北大340')
+    // console.log(set)
+    // // 删除元素
+    // set.delete('清华')
+    // console.log(set)
+    // console.log(set.has('北大338'))
+    //     for(let key of set){
+    //         console.log(key)
+    //     }
+
+    //     // 去重
+    //     let array=[1,1,1,,1,2,2,5,8,57,]
+    //     let result=new Set(array)
+    //     // 将set变为数组
+    //     let b=[...result]
+    //     console.log(b)
+
+    //     let c=Array.from(result)
+    //     console.log(c)
+
+    //     let d=Array.of(1,2,5,5,5,6,8,7,9)
+    //     console.log(d)
+    </script>
+</body>
+</html>
