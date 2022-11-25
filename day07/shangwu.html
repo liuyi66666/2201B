@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // es5
+        // function Point(x,y){
+        //     this.x=x;
+        //     this.y=y
+        // }
+        // Point.prototype.toString=function(){
+        //     return '('+this.x','+this.y+')'
+        // }
+
+        // var p=new Point(1,2)
+        // let result=p.toString()
+        // console.log(result)
+        // console.log(p.toString())
+
+        // class Point{
+        //     constructor (x,y) {
+        //         this.x = x;
+        //         this.y = y
+        //     }
+        //     toString(){
+        //         return '(' + this.x+',' + this.y + ')'
+        //     }
+        // }
+
+
+        // let p = new Point(1, 2)
+        // let result = p.toString()
+        // console.log(result)
+
+
+        // es5的写法
+        // function Phone(brand,price){
+        //     this.brand=brand
+        //     this.price=price
+        // }
+        // Phone.prototype.call=function(){
+        //     console.log('我是666')
+        // }
+        // Phone.prototype.info=function(){
+        //     return '(我手机型号：'+this.brand+',价格'+this.price+')'
+        // }
+        // let p=new Phone('viv',66)
+            // let d=p.call()
+            // console.log(d)
+            // let result=p.info()
+            // console.log(result)
+
+        // es6  class类写法
+        // class Phones{
+        //     constructor(brand,price){
+        //         this.brand=brand
+        //         this.price=price
+        //     }
+        //     call(){
+        //         console.log('我是666')
+        //     }
+        //     info(){
+        //         return '(我手机型号：'+this.brand+',价格'+this.price+')'
+        //     }
+        // } 
+        //     let p=new Phones('viv',66)
+        //     let d=p.call()
+        //     // console.log(d)
+        //     let result=p.info()
+        //     console.log(result)
+
+
+        // 对象继承
+
+        // function Phone(brand,price){
+        //     this.brand=brand
+        //     this.price=price
+        // }
+        // Phone.prototype.call=function(){
+        //     console.log('打电话去')
+        // }
+        // function SmartPhone(brand,price,color,size){
+        //     Phone.call(this.brand,price)
+        //     this.color=color
+        //     this.size=size
+        // }
+        // SmartPhone.prototype=new Phone
+        // SmartPhone.prototype.constructor=SmartPhone
+
+        // SmartPhone.prototype.photo=function(){
+        //     console.log('拍照片')
+        // }
+        // SmartPhone.prototype.playGame=function(){
+        //     console.log('玩游戏')
+        // }
+        // const ha =new SmartPhone('锤子',123,'红色','游戏')
+        // console.log(ha)
+
+        // class Phone{
+        //     // 构造方法
+        //     constructor(brand,price){
+        //         this.brand=brand
+        //         this.price=price
+        //     }
+        //     // 父类的成员属性
+        //     call(){
+        //         console.log('我可以打电话')
+        //     }
+        // }
+
+        // class SmartPhone extends Phone{
+        //     // 构造方法
+        //     constructor(brand,price,color,size){
+        //         super(brand,price)
+        //         this.color=color
+        //         this.size=size
+        //     }
+        //     photo(){
+        //         console.log('拍照')
+        //     }
+        //     playGame(){
+        //         console.log('玩游戏')
+        //     }
+        //     call(){
+        //         console.log('视频通话')
+        //     }
+        // }
+
+        // const  jvzi=new SmartPhone('小米',137,'红色','666inch')
+        // console.log(jvzi)
+        // jvzi.call()
+        // jvzi.photo()
+        // jvzi.playGame()
+
+          // es5
+        // function Point(x,y){
+        //     this.x=x;
+        //     this.y=y
+        // }
+        // Point.prototype.toString=function(){
+        //     return '('+this.x','+this.y+')'
+        // }
+
+        // var p=new Point(1,2)
+        // let result=p.toString()
+        // console.log(result)
+        // console.log(p.toString())
+
+        // class Point{
+        //     constructor (x,y) {
+        //         this.x = x;
+        //         this.y = y
+        //     }
+        //     toString(){
+        //         return '(' + this.x+',' + this.y + ')'
+        //     }
+        // }
+
+
+        // let p = new Point(1, 2)
+        // let result = p.toString()
+        // console.log(result)
+
+
+        // es5的写法
+        // function Phone(brand,price){
+        //     this.brand=brand
+        //     this.price=price
+        // }
+        // Phone.prototype.call=function(){
+        //     console.log('我是666')
+        // }
+        // Phone.prototype.info=function(){
+        //     return '(我手机型号：'+this.brand+',价格'+this.price+')'
+        // }
+        // let p=new Phone('viv',66)
+            // let d=p.call()
+            // console.log(d)
+            // let result=p.info()
+            // console.log(result)
+
+        // es6  class类写法
+        // class Phones{
+        //     constructor(brand,price){
+        //         this.brand=brand
+        //         this.price=price
+        //     }
+        //     call(){
+        //         console.log('我是666')
+        //     }
+        //     info(){
+        //         return '(我手机型号：'+this.brand+',价格'+this.price+')'
+        //     }
+        // } 
+        //     let p=new Phones('viv',66)
+        //     let d=p.call()
+        //     // console.log(d)
+        //     let result=p.info()
+        //     console.log(result)
+
+
+        // 对象继承
+
+        // function Phone(brand,price){
+        //     this.brand=brand
+        //     this.price=price
+        // }
+        // Phone.prototype.call=function(){
+        //     console.log('打电话去')
+        // }
+        // function SmartPhone(brand,price,color,size){
+        //     Phone.call(this.brand,price)
+        //     this.color=color
+        //     this.size=size
+        // }
+        // SmartPhone.prototype=new Phone
+        // SmartPhone.prototype.constructor=SmartPhone
+
+        // SmartPhone.prototype.photo=function(){
+        //     console.log('拍照片')
+        // }
+        // SmartPhone.prototype.playGame=function(){
+        //     console.log('玩游戏')
+        // }
+        // const ha =new SmartPhone('锤子',123,'红色','游戏')
+        // console.log(ha)
+
+        // class Phone{
+        //     // 构造方法
+        //     constructor(brand,price){
+        //         this.brand=brand
+        //         this.price=price
+        //     }
+        //     // 父类的成员属性
+        //     call(){
+        //         console.log('我可以打电话')
+        //     }
+        // }
+
+        // class SmartPhone extends Phone{
+        //     // 构造方法
+        //     constructor(brand,price,color,size){
+        //         super(brand,price)
+        //         this.color=color
+        //         this.size=size
+        //     }
+        //     photo(){
+        //         console.log('拍照')
+        //     }
+        //     playGame(){
+        //         console.log('玩游戏')
+        //     }
+        //     call(){
+        //         console.log('视频通话')
+        //     }
+        // }
+
+        // const  jvzi=new SmartPhone('小米',137,'红色','666inch')
+        // console.log(jvzi)
+        // jvzi.call()
+        // jvzi.photo()
+        // jvzi.playGame()
+
+          // es5
+        // function Point(x,y){
+        //     this.x=x;
+        //     this.y=y
+        // }
+        // Point.prototype.toString=function(){
+        //     return '('+this.x','+this.y+')'
+        // }
+
+        // var p=new Point(1,2)
+        // let result=p.toString()
+        // console.log(result)
+        // console.log(p.toString())
+
+        // class Point{
+        //     constructor (x,y) {
+        //         this.x = x;
+        //         this.y = y
+        //     }
+        //     toString(){
+        //         return '(' + this.x+',' + this.y + ')'
+        //     }
+        // }
+
+
+        // let p = new Point(1, 2)
+        // let result = p.toString()
+        // console.log(result)
+
+
+        // es5的写法
+        // function Phone(brand,price){
+        //     this.brand=brand
+        //     this.price=price
+        // }
+        // Phone.prototype.call=function(){
+        //     console.log('我是666')
+        // }
+        // Phone.prototype.info=function(){
+        //     return '(我手机型号：'+this.brand+',价格'+this.price+')'
+        // }
+        // let p=new Phone('viv',66)
+            // let d=p.call()
+            // console.log(d)
+            // let result=p.info()
+            // console.log(result)
+
+        // es6  class类写法
+        // class Phones{
+        //     constructor(brand,price){
+        //         this.brand=brand
+        //         this.price=price
+        //     }
+        //     call(){
+        //         console.log('我是666')
+        //     }
+        //     info(){
+        //         return '(我手机型号：'+this.brand+',价格'+this.price+')'
+        //     }
+        // } 
+        //     let p=new Phones('viv',66)
+        //     let d=p.call()
+        //     // console.log(d)
+        //     let result=p.info()
+        //     console.log(result)
+
+
+        // 对象继承
+
+        // function Phone(brand,price){
+        //     this.brand=brand
+        //     this.price=price
+        // }
+        // Phone.prototype.call=function(){
+        //     console.log('打电话去')
+        // }
+        // function SmartPhone(brand,price,color,size){
+        //     Phone.call(this.brand,price)
+        //     this.color=color
+        //     this.size=size
+        // }
+        // SmartPhone.prototype=new Phone
+        // SmartPhone.prototype.constructor=SmartPhone
+
+        // SmartPhone.prototype.photo=function(){
+        //     console.log('拍照片')
+        // }
+        // SmartPhone.prototype.playGame=function(){
+        //     console.log('玩游戏')
+        // }
+        // const ha =new SmartPhone('锤子',123,'红色','游戏')
+        // console.log(ha)
+
+        // class Phone{
+        //     // 构造方法
+        //     constructor(brand,price){
+        //         this.brand=brand
+        //         this.price=price
+        //     }
+        //     // 父类的成员属性
+        //     call(){
+        //         console.log('我可以打电话')
+        //     }
+        // }
+
+        // class SmartPhone extends Phone{
+        //     // 构造方法
+        //     constructor(brand,price,color,size){
+        //         super(brand,price)
+        //         this.color=color
+        //         this.size=size
+        //     }
+        //     photo(){
+        //         console.log('拍照')
+        //     }
+        //     playGame(){
+        //         console.log('玩游戏')
+        //     }
+        //     call(){
+        //         console.log('视频通话')
+        //     }
+        // }
+
+        // const  jvzi=new SmartPhone('小米',137,'红色','666inch')
+        // console.log(jvzi)
+        // jvzi.call()
+        // jvzi.photo()
+        // jvzi.playGame()
+    </script>
+</body>
+
+</html>

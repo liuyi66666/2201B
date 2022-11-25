@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function equal(a,b){
+        //     if(Math.abs(a-b)<Number.EPSILON){
+        //         return true
+        //     }else{
+        //         return false
+        //     }
+        // }
+        // console.log(0.1+0.2===0.3)
+        // console.log(equal(0.1+0.2,0.3))
+
+        // // 二进制八进制
+        // let b=0b1010
+        // let o=0o777
+        // // 十进制
+        // let d=100
+        // let x=0xff
+
+        // console.log(Number.isFinite(100))
+        // console.log(Number.isFinite(100/0))
+        // console.log(Number.isFinite(Infinity))
+
+        // const proto={
+        //     foo:'hello'
+        // }
+        // const obj={
+        //     foo:'world',
+        //     find(){
+        //         return super.foo
+        //     }
+        // }
+        // Object.setPrototypeOf(obj,proto)
+        // console.log(obj.find())
+        // obj.find()
+
+
+
+        // let obj1=new Proxy({},{
+        //     get:function(target,key,receiver){
+        //         console.log(`获取当前${key}!`)
+        //         return Reflect.get(target,key,receiver)
+        //     },
+        //     set:function(target,key,value,receiver){
+        //         // console.log((target))
+        //         // console.log((key))
+        //         // console.log((value))
+        //         // console.log((receiver))
+        //         console.log(`设置当前${key}!`)
+        //         return Reflect.get(target,key,value,receiver)
+        //     }
+        // })
+        // obj1.count=1
+        // ++obj1.count
+        // console.log(obj1)
+
+
+
+        
+        //  class Tripple {
+        //  static tripple(a = 1) {
+        //         return a * 3
+        //      }
+        //  }
+        
+         // class BiggerTripple extends Tripple{
+         //     static tripple(a){
+         //         return super.tripple(a) * super.tripple(a)
+         //     }
+         // }
+        
+         //类调用自身的方法
+        //  console.log(Tripple.tripple()); //3
+        //  console.log(Tripple.tripple(9)); //27
+         //实例化的对象
+        //  let tp = new Tripple()
+        
+         // console.log(BiggerTripple.tripple(3));  //不会受父类实例化的影响
+        //  console.log(tp.tripple()); //'tp.tripple 不是一个函数'
+ 
+
+
+
+
+
+        // function equal(a,b){
+        //     if(Math.abs(a-b)<Number.EPSILON){
+        //         return true
+        //     }else{
+        //         return false
+        //     }
+        // }
+        // console.log(0.1+0.2===0.3)
+        // console.log(equal(0.1+0.2,0.3))
+
+        // // 二进制八进制
+        // let b=0b1010
+        // let o=0o777
+        // // 十进制
+        // let d=100
+        // let x=0xff
+
+        // console.log(Number.isFinite(100))
+        // console.log(Number.isFinite(100/0))
+        // console.log(Number.isFinite(Infinity))
+
+        // const proto={
+        //     foo:'hello'
+        // }
+        // const obj={
+        //     foo:'world',
+        //     find(){
+        //         return super.foo
+        //     }
+        // }
+        // Object.setPrototypeOf(obj,proto)
+        // console.log(obj.find())
+        // obj.find()
+
+
+
+        // let obj1=new Proxy({},{
+        //     get:function(target,key,receiver){
+        //         console.log(`获取当前${key}!`)
+        //         return Reflect.get(target,key,receiver)
+        //     },
+        //     set:function(target,key,value,receiver){
+        //         // console.log((target))
+        //         // console.log((key))
+        //         // console.log((value))
+        //         // console.log((receiver))
+        //         console.log(`设置当前${key}!`)
+        //         return Reflect.get(target,key,value,receiver)
+        //     }
+        // })
+        // obj1.count=1
+        // ++obj1.count
+        // console.log(obj1)
+
+
+
+        //  class Tripple {
+        //  static tripple(a = 1) {
+        //         return a * 3
+        //      }
+        //  }
+        
+         // class BiggerTripple extends Tripple{
+         //     static tripple(a){
+         //         return super.tripple(a) * super.tripple(a)
+         //     }
+         // }
+        
+         //类调用自身的方法
+        //  console.log(Tripple.tripple()); //3
+        //  console.log(Tripple.tripple(9)); //27
+         //实例化的对象
+        //  let tp = new Tripple()
+        
+         // console.log(BiggerTripple.tripple(3));  //不会受父类实例化的影响
+        //  console.log(tp.tripple()); //'tp.tripple 不是一个函数'
+ 
+
+        // function equal(a,b){
+        //     if(Math.abs(a-b)<Number.EPSILON){
+        //         return true
+        //     }else{
+        //         return false
+        //     }
+        // }
+        // console.log(0.1+0.2===0.3)
+        // console.log(equal(0.1+0.2,0.3))
+
+        // // 二进制八进制
+        // let b=0b1010
+        // let o=0o777
+        // // 十进制
+        // let d=100
+        // let x=0xff
+
+        // console.log(Number.isFinite(100))
+        // console.log(Number.isFinite(100/0))
+        // console.log(Number.isFinite(Infinity))
+
+        // const proto={
+        //     foo:'hello'
+        // }
+        // const obj={
+        //     foo:'world',
+        //     find(){
+        //         return super.foo
+        //     }
+        // }
+        // Object.setPrototypeOf(obj,proto)
+        // console.log(obj.find())
+        // obj.find()
+
+
+
+        // let obj1=new Proxy({},{
+        //     get:function(target,key,receiver){
+        //         console.log(`获取当前${key}!`)
+        //         return Reflect.get(target,key,receiver)
+        //     },
+        //     set:function(target,key,value,receiver){
+        //         // console.log((target))
+        //         // console.log((key))
+        //         // console.log((value))
+        //         // console.log((receiver))
+        //         console.log(`设置当前${key}!`)
+        //         return Reflect.get(target,key,value,receiver)
+        //     }
+        // })
+        // obj1.count=1
+        // ++obj1.count
+        // console.log(obj1)
+
+
+
+        //  class Tripple {
+        //  static tripple(a = 1) {
+        //         return a * 3
+        //      }
+        //  }
+        
+         // class BiggerTripple extends Tripple{
+         //     static tripple(a){
+         //         return super.tripple(a) * super.tripple(a)
+         //     }
+         // }
+        
+         //类调用自身的方法
+        //  console.log(Tripple.tripple()); //3
+        //  console.log(Tripple.tripple(9)); //27
+         //实例化的对象
+        //  let tp = new Tripple()
+        
+         // console.log(BiggerTripple.tripple(3));  //不会受父类实例化的影响
+        //  console.log(tp.tripple()); //'tp.tripple 不是一个函数'
+ 
+    </script>
+</body>
+</html>
