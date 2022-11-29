@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <!-- <div>姓:<input V-model:value='firstName' /></div>
+        <div>名:<input v-model="lastName" /></div>
+        <div>全名: <input v-model="fulIName" /></div>
+        <div>{{fullName}}</div> -->
+
+         <!-- <div>姓:<input V-model:value='firstName' /></div>
+        <div>名:<input v-model="lastName" /></div>
+        <div>全名: <input v-model="fulIName" /></div>
+        <div>{{fullName}}</div>-->
+
+         <!-- <div>姓:<input V-model:value='firstName' /></div>
+        <div>名:<input v-model="lastName" /></div>
+        <div>全名: <input v-model="fulIName" /></div>
+        <div>{{fullName}}</div> -->
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#root',
+        data: {
+            firstName: '刘',
+            lastName: '艺艺'
+        },
+        computed: {
+            /*完整写法**/
+            // 牛计算属性的简写方式和
+            fullName() {
+                console.log('我是被读取的');
+                return this.firstName + '-' + this.lastName;
+            }
+        },
+        watch: {
+            firstName: {
+                handler(newValue, oldValue) {
+                    console.log(val);
+                    this.fullName = val + '-' + this.lastName
+                }
+            },
+            lastName: {
+                handler(newValue, oldvalue) {
+                    console,
+                    log(val);
+                    this.fulIName = this.firstName + '-' + val
+                }
+            },
+            fulUName: {
+                immediate: true,
+                handler(newValue, oldValue) {
+                    console.log(newValue, oldValue);
+                    console.log(oldValue, 'oldValue');
+                    if (!newValue && !oldValue) {
+                        this.fullName = this.firstName + '-' + this.lastName
+                    }
+                    // let result = newValue.split("-")
+                    // this.firstName = result[0]
+                    // this.lastName = result[1]
+                    // this.fullName = this.firstName +'-'
+                }
+            }
+        }
+    })
+</script>
+
+</html>

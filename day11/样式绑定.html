@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>样式绑定</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <!-- 一个容器 -->
+    <div id="root">
+        <!-- 绑定class样式--字符串写法：适用于 样式的类名不确定，需要动态指定 -->
+        <!-- <div class="basic" :class="mood" @click="change">{{name}}</div> -->
+        <!-- 绑定class样式--数组写法：适用于 要绑定的样式个数不确定，名字也不确定 -->
+        <!-- <div class="basic" :class="classArr[1]">{{name}}</div> -->
+        <!-- 绑定class样式--对象写法：适用于 绑定样式个数确定，名字也确定，但要动态决定用不用 -->
+        <!-- <div class="basic" :class="{classObj:true}">{{name}}</div> -->
+        <!-- 绑定class样式--对象写法： 适用于：三元表达式 -->
+        <!-- <div class="basic" :class="[isclassobj?'classObj1':'classObj2']">{{name}}</div> -->
+        <!-- 绑定style样式--对象写法 -->
+        <!-- <div class="basic" :style="styleobj" >{{name}}</div> -->
+
+        <!-- 绑定style样式--数组写法 -->
+        <!-- <div class="basic" :style="styleobj1" >{{name}}</div> -->
+
+
+         <!-- 绑定class样式--字符串写法：适用于 样式的类名不确定，需要动态指定 -->
+         <!-- <div class="basic" :class="mood" @click="change">{{name}}</div> -->
+         <!-- 绑定class样式--数组写法：适用于 要绑定的样式个数不确定，名字也不确定 -->
+         <!-- <div class="basic" :class="classArr[1]">{{name}}</div> -->
+         <!-- 绑定class样式--对象写法：适用于 绑定样式个数确定，名字也确定，但要动态决定用不用 -->
+         <!-- <div class="basic" :class="{classObj:true}">{{name}}</div> -->
+         <!-- 绑定class样式--对象写法： 适用于：三元表达式 -->
+         <!-- <div class="basic" :class="[isclassobj?'classObj1':'classObj2']">{{name}}</div> -->
+         <!-- 绑定style样式--对象写法 -->
+         <!-- <div class="basic" :style="styleobj" >{{name}}</div> -->
+ 
+         <!-- 绑定style样式--数组写法 -->
+         <!-- <div class="basic" :style="styleobj1" >{{name}}</div> -->
+
+          <!-- 绑定class样式--字符串写法：适用于 样式的类名不确定，需要动态指定 -->
+        <!-- <div class="basic" :class="mood" @click="change">{{name}}</div> -->
+        <!-- 绑定class样式--数组写法：适用于 要绑定的样式个数不确定，名字也不确定 -->
+        <!-- <div class="basic" :class="classArr[1]">{{name}}</div> -->
+        <!-- 绑定class样式--对象写法：适用于 绑定样式个数确定，名字也确定，但要动态决定用不用 -->
+        <!-- <div class="basic" :class="{classObj:true}">{{name}}</div> -->
+        <!-- 绑定class样式--对象写法： 适用于：三元表达式 -->
+        <!-- <div class="basic" :class="[isclassobj?'classObj1':'classObj2']">{{name}}</div> -->
+        <!-- 绑定style样式--对象写法 -->
+        <!-- <div class="basic" :style="styleobj" >{{name}}</div> -->
+
+        <!-- 绑定style样式--数组写法 -->
+        <!-- <div class="basic" :style="styleobj1" >{{name}}</div> -->
+    </div>
+    <script>
+        Vue.config.productionTip = false
+
+        new Vue({
+            el: '#root',
+            data() {
+                return {
+                    name: '这是基础样式',
+                    mood:'normal',
+                    // classArr:['classArr1','classArr2'],
+                    // isclassobj:false,
+                    // styleobj:{
+                    //     backgroundColor: 'palevioletred'
+                    // },
+                    // classObj:{
+                    //     classObj1:false,
+                    //     classObj2:true
+                    // },
+                    // styleobj1:[
+                    //     {
+                    //         backgroundColor: 'red',
+                    //         color: 'bisque'
+                    //     },{
+                    //         fontSize: '30px'
+                    //     }
+                    // ]
+
+
+                    // classArr:['classArr1','classArr2'],
+                    // isclassobj:false,
+                    // styleobj:{
+                    //     backgroundColor: 'palevioletred'
+                    // },
+                    // classObj:{
+                    //     classObj1:false,
+                    //     classObj2:true
+                    // },
+                    // styleobj1:[
+                    //     {
+                    //         backgroundColor: 'red',
+                    //         color: 'bisque'
+                    //     },{
+                    //         fontSize: '30px'
+                    //     }
+                    // ]
+
+
+                    // classArr:['classArr1','classArr2'],
+                    // isclassobj:false,
+                    // styleobj:{
+                    //     backgroundColor: 'palevioletred'
+                    // },
+                    // classObj:{
+                    //     classObj1:false,
+                    //     classObj2:true
+                    // },
+                    // styleobj1:[
+                    //     {
+                    //         backgroundColor: 'red',
+                    //         color: 'bisque'
+                    //     },{
+                    //         fontSize: '30px'
+                    //     }
+                    // ]
+                    
+                    
+                }
+            },
+            methods: {
+                change(){
+                    const arr=['happy','sad','normal']
+                    // console.log(Math.random())
+                    this.mood=arr[Math.floor(Math.random()*3)]
+                }
+            },
+        })
+    </script>
+    <style>
+        .basic{
+            width: 200px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+        .happy{
+            width: 200px;
+            height: 100px;
+            border: 1px solid red;
+            background-color: palevioletred;
+            background: linear-gradient(30deg,yellow,pink,orange,red);
+        }
+        .sad{
+            width: 200px;
+            height: 100px;
+            border: 1px solid blue;
+            background-color: greenyellow;
+        }
+        .normal{
+            background-color: red;
+            border: 1px solid brown;
+        }
+        .classArr{
+            background-color: blue;
+            color: bisque;
+            font-size: 20px;
+        }
+        .classArr1{
+            background-color: plum;
+            color: bisque;
+            font-size: 18px;
+        }
+        .classArr2{
+            background-color: orangered;
+            color: bisque;
+            font-size: 20px;
+        }
+        .classObj{
+            background-color: aqua;
+            font-size: 25px;
+        }
+        .classObj1{
+            background-color: green;
+            font-size: 18px;
+        }
+        .classObj2{
+            background-color: yellowgreen;
+            font-size: 20px;
+        }
+        </style>
+</body>
+
+
+</html>

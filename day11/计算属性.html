@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <!-- <div>姓:<input V-model:value='firstName' /></div>
+        <div>名:<input v-model="lastName" /></div>
+        <div>全名: <input v-model="fullName" /></div>
+        <div>{{fullName}}</div>
+        <div>{{fullName}}</div>
+        <div>{{fullName}}</div>
+        <div>{{fullName}}</div>
+        <div>{{fullName}}</div>
+        <div>{{fullName}}</div>
+        <div>{{fullName}}</div>
+        <div>{{fullName}}</div> -->
+
+
+        <!-- <div>姓:<input V-model:value='firstName' /></div>
+        <div>名:<input v-model="lastName" /></div>
+        <div>全名: <input v-model="fullName" /></div>
+        <div>{{fullName}}</div>
+        <div>{{fullName}}</div>
+        <div>{{fullName}}</div>
+        <div>{{fullName}}</div>
+        <div>{{fullName}}</div>
+        <div>{{fullName}}</div>
+        <div>{{fullName}}</div>
+        <div>{{fullName}}</div> -->
+
+
+        <div>姓:<input V-model:value='firstName' /></div>
+        <div>名:<input v-model="lastName" /></div>
+        <div>全名: <input v-model="fullName" /></div>
+        <div>{{fullName}}</div>
+        <div>{{fullName}}</div>
+        <div>{{fullName}}</div>
+        <div>{{fullName}}</div>
+        <div>{{fullName}}</div>
+        <div>{{fullName}}</div>
+        <div>{{fullName}}</div>
+        <div>{{fullName}}</div>
+    </div>
+</body>
+<script>
+    new Vue({
+                el: '#root',
+                data: {
+                    firstName: '刘',
+                    lastName: '艺艺'
+                },
+                computed: {
+                    // fullName: {
+                        // 完整写法
+                        //     get: function () {
+                        //         console.log('我是被读取的');
+                        //         setTimeout(function () {
+                        //             console.log('我是能被读取的');
+                        //             return this.firstName + '-' + this.lastName
+                        //         }, 1000)
+                        //     },
+                        //     set: function (val) {
+                        //         console.log("我是被设置的")
+                        //         // 1使用字符串切割的方法，将字符串分开，并进行赋值
+                        //         let result = val.split("-")
+                        //         this.firstName = result[0]
+                        //         this.lastName = result[1]
+                        //     }
+                        // }
+                        
+                    // }
+                    // 计算属性的简写方式
+                    fullName() {
+                            console.log("我是被读取的");
+                            return this.firstName + '-' + this.lastName
+                        }
+                }
+            })
+</script>
+
+</html>
