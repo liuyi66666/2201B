@@ -20,12 +20,18 @@
     </div>
     <script>
         Vue.config.productionTip = false
-        Vue.filter('timeFormater',function(value,str='YY年MM月DD HH:mm:ss'){
-            return dayjs(value).format(str)
-        })
-        Vue.filter('formate',function(value,str='YY年MM月DD HH:mm:ss'){
-            return dayjs(value).format(str)
-        })
+        // Vue.filter('timeFormater',function(value,str='YY年MM月DD HH:mm:ss'){
+        //     return dayjs(value).format(str)
+        // })
+        // Vue.filter('formate',function(value,str='YY年MM月DD HH:mm:ss'){
+        //     return dayjs(value).format(str)
+        // })
+         // Vue.filter('timeFormater',function(value,str='YY年MM月DD HH:mm:ss'){
+        //     return dayjs(value).format(str)
+        // })
+        // Vue.filter('formate',function(value,str='YY年MM月DD HH:mm:ss'){
+        //     return dayjs(value).format(str)
+        // })
         new Vue({
             el:'#root',
             data() {
