@@ -1,0 +1,110 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #1e1e1e;
+    color: #fff;
+    font-family: '楷体';
+    width: 100%;
+    background-image: url('./xxxx.gif');
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.box{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+.body{
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+}
+h1{
+    font-size: 40px;
+}
+p{
+    display: inline-block;
+    text-align: right;
+    width: 95%;
+    margin-top: 30px;
+    font-size: 20px;
+}
+.text{
+    color: aliceblue;
+    font-size: 40px;
+}
+.content{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+.right{
+    width: 600px;
+    text-align: left;
+}
+.top{
+    margin-top: 150px;
+}
+footer{
+    margin-top: 160px;
+}
+footer span{
+    font-size: 13px;
+    background-color: #67c23a;
+    margin-right: 20px;
+    padding: 10px 16px;
+    border-radius: 30px;
+    font-family: '微软雅黑';
+}
+.liColor{
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: #fff;
+    font-size: 22px;
+}
+.left{
+    width: 900px;
+}
+.left ul{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.left ul li{
+    font-size: 22px;
+    text-align: center;
+    width: 80px;
+    margin: 26px;
+    padding-bottom: 5px;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+    font-weight: bold;
+    background-image: -webkit-linear-gradient(bottom, #e02803, #0f0aa7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent
+}
+.mp3{
+    width: 100%;
+    height: 20px;
+    text-align: right;
+    padding: 20px;
+    box-sizing: border-box;
+}
+#title{
+    font-size: 50px;
+    font-weight: bold;
+    background-image: -webkit-linear-gradient(bottom, #e02803, #0f0aa7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent
+}
