@@ -1,0 +1,31 @@
+{
+  "data": [
+    {
+      "id": 537,
+      "roleName": "你好啊",
+      "roleDesc": "你吃饭了吗",
+      "children": []
+    },
+    {
+      "id": 547,
+      "roleName": "放假吧",
+      "roleDesc": "睡觉",
+      "children": []
+    },
+    { "id": 550, "roleName": "66666", "roleDesc": "11111111", "children": [] },
+    {
+      "id": 551,
+      "roleName": "444444444444",
+      "roleDesc": "健康",
+      "children": []
+    },
+    { "id": 553, "roleName": "李红", "roleDesc": "吃饭了吗", "children": [] },
+    {
+      "id": 554,
+      "roleName": "你在干神魔",
+      "roleDesc": "作甚麽呢",
+      "children": []
+    }
+  ],
+  "meta": { "msg": "获取成功", "status": 200 }
+}
