@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div style="width:600px;height:400px;"></div>
+    <!-- <div id="main" style="height: 600px; width: 600px"></div> -->
+    <script>
+        // 折线统计图
+// 			let myChart = echarts.init(document.getElementById('main'))
+// 			var option = {
+//                 title:{
+//                     text:'条形统计图'
+//                 },
+//   tooltip: {
+//     trigger: 'axis',
+//     axisPointer: {
+//       type: 'shadow'
+//     }
+//   },
+//   grid: {
+//     left: '3%',
+//     right: '4%',
+//     bottom: '3%',
+//     containLabel: true
+//   },
+//   xAxis: [
+//     {
+//       type: 'category',
+//       data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+//       axisTick: {
+//         alignWithLabel: true
+//       }
+//     }
+//   ],
+//   yAxis: [
+//     {
+//       type: 'value'
+//     }
+//   ],
+//   series: [
+//     {
+//       name: 'Direct',
+//       type: 'bar',
+//       barWidth: '60%',
+//       data: [10, 52, 200, 334, 390, 330, 220]
+//     }
+//   ]
+// };
+// myChart.setOption(option)
+
+    var mEcharts=echarts.init(document.querySelector('div'))
+    var xDataArr=['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月']
+    var yDataArr=[3000,2800,1000,800,700,1400,1300,900,1000,800,600]
+     option = {
+            title: {
+                text: '月销量',
+            },
+            xAxis: {
+                type: 'category', 
+                data: xDataArr
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [{
+                name: '康师傅',
+                type: 'line',
+                data: yDataArr
+            }]
+        }
+        mEcharts.setOption(option)
+
+
+
+    </script>
+</body>
+</html>

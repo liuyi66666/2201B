@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/echarts.min.js"></script>
+    <script src="./vue.js"></script>
+    <script src="./js/china.js"></script>
+</head>
+<body>
+    <div id="qu" style="width: 500px; height: 500px;"></div>
+    <script>
+        var chartDom = document.getElementById('qu');
+         var myChart = echarts.init(chartDom);
+         var option;
+        var chinaGeoCoordMap = {
+                    '黑龙江': [127.9688, 45.368],
+                    '内蒙古': [110.3467, 41.4899],
+                    "吉林": [125.8154, 44.2584],
+                    '北京市': [116.4551, 40.2539],
+                    "辽宁": [123.1238, 42.1216],
+                    "河北": [114.4995, 38.1006],
+                    "天津": [117.4219, 39.4189],
+                    "山西": [112.3352, 37.9413],
+                    "陕西": [109.1162, 34.2004],
+                    "甘肃": [103.5901, 36.3043],
+                    "宁夏": [106.3586, 38.1775],
+                    "青海": [101.4038, 36.8207],
+                    "新疆": [87.611053,43.828171],
+                    "西藏": [91.117212,29.646922],
+                    "四川": [103.9526, 30.7617],
+                    "重庆": [108.384366, 30.439702],
+                    "山东": [117.1582, 36.8701],
+                    "河南": [113.4668, 34.6234],
+                    "江苏": [118.8062, 31.9208],
+                    "安徽": [117.29, 32.0581],
+                    "湖北": [114.3896, 30.6628],
+                    "浙江": [119.5313, 29.8773],
+                    "福建": [119.4543, 25.9222],
+                    "江西": [116.0046, 28.6633],
+                    "湖南": [113.0823, 28.2568],
+                    "贵州": [106.6992, 26.7682],
+                    "云南": [102.9199, 25.4663],
+                    "广东": [113.12244, 23.009505],
+                    "广西": [108.479, 23.1152],
+                    "海南": [110.3893, 19.8516],
+                     "台湾": [120.702967,24.123621],
+                    '上海': [121.4648, 31.2891]
+                };
+               
+                
+               
+                option = {
+                  backgroundColor: '#061d4d',
+                    geo: {
+                        map: 'china',
+                        aspectScale: 0.85,
+                        layoutCenter: ["50%", "50%"], //地图位置
+                        layoutSize: '100%',
+                        itemStyle: {
+                            normal: {
+                                shadowColor: '#276fce',
+                                shadowOffsetX: 0,
+                                shadowOffsetY: 15,
+                                opacity: 0.5,
+                            },
+                            emphasis: {
+                                areaColor: '#276fce',
+
+                            }
+                        },
+                        regions: [{
+                            name: '南海诸岛',
+                            itemStyle: {
+                                areaColor: 'rgba(0, 10, 52, 1)',
+
+                                borderColor: 'rgba(0, 10, 52, 1)',
+                                normal: {
+                                    opacity: 0,
+                                    label: {
+                                        show: false,
+                                        color: "#009cc9",
+                                    }
+                                },
+
+
+                            },
+                            label: {
+                                show: false,
+                                color: '#FFFFFF',
+                                fontSize: 12,
+                            },
+
+
+                        }],
+
+                    },
+                    series: series
+                };
+                option && myChart.setOption(option);
+    </script>
+</body>
+</html>
