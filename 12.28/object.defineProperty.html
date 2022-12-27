@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body></body>
+</html>
+<script>
+	//     // let hope = '你好啊'
+	//     let obj = {
+	//         name: '张三',
+	//         age: '18',
+	//         sex: '男'
+	//     }
+	//     Object.defineProperty(obj, 'hope', {
+	//         value:'你好啊',
+	//         // 不可枚举型   循环遍历遍历不出来的
+	//         enumerable: true,    //控制属性是否可以枚举,默认值为false
+	//         writable:true,     //控制属性是否被修改,默认值为false
+	//         // 加上这个属性hope就可以修改了
+
+	//         configurable:true     //控制属性是否可以被删除,默认值为false
+
+	//     })
+
+	//     console.log(Object.keys(obj));
+	//     // console.log(Object.values(obj));
+	//     for(let key in obj){
+	//         console.log(key);
+	//     }
+	//     obj.age=20
+	// //    console.log(obj);
+	// //    原来有的属性可以修改
+
+	//    obj.hope='我想去烟台'
+	//    console.log(obj);
+	//     // 枚举出来的修改不了
+
+	//    delete obj.age
+	//    console.log(obj);
+	// //    原来有的属性可以被删除
+
+	//   delete obj.hope
+	//   console.log(obj);
+	// // / 枚举出来的修改不了
+
+	// var book = {
+	// 	_year: 2004,
+	// 	edition: 1,
+	// };
+
+	// Object.defineProperty(book, 'year', {
+	// 	get: function () {
+	// 		return this._year;
+	// 	},
+	// 	set: function (newYear) {
+	// 		if (newYear > 2004) {
+	// 			this._year = newYear;
+	// 			this.edition += newYear - 2004;
+	// 		}
+	// 	},
+	// });
+
+	// book.year = 2005;
+	// console.log(book.edition); // 2
+	// console.log(book._year); //2005
+	var p1 = {
+		name: 'lisi123',
+	};
+	var student = {};
+	Object.defineProperties(student, {
+		name: {
+			writable: false,
+			value: 'lisi',
+		},
+		age: {
+			writable: true,
+			value: 16,
+		},
+		sex: {
+			get() {
+				return '男';
+			},
+			set(v) {
+				p1.sex = v;
+			},
+		},
+	});
+
+	p1.sex = '男';
+	console.log(student.name + ':' + student.age);
+	console.log(p1.sex); // 男
+	student.sex = '女';
+	console.log(student.sex); //男
+	console.log(p1.sex); // 女
+</script>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body></body>
+</html>
+<script>
+	// const data={}
+	// new Proxy(data, {
+	// 	// 拦截读取属性值
+	// 	get(target, prop) {
+	// 		return Reflect.get(target, prop);
+	// 	},
+	// 	// 拦截设置属性值或添加新属性
+	// 	set(target, prop, value) {
+	// 		return Reflect.set(target, prop, value);
+	// 	},
+	// 	// 拦截删除属性
+	// 	deleteProperty(target, prop) {
+	// 		return Reflect.deleteProperty(target, prop);
+	// 	},
+	// });
+	// proxy.name = 'tom';
+
+	const obj = {
+		name: '树雾',
+		age: 18,
+		address: '河南省南阳市',
+	};
+	//   手写v3响应式proxy：优点：创建一个代理的对象进行属性的：增。读、删，等操作
+	// 1、监听的原对象
+	// 3、进行对这个对象的操作
+	const ObjProxy = new Proxy(obj, {
+		//set与get中传入值的详情说明
+		//1.target：原对象
+		//2.key：当前属性名
+		//3.newValue：修改的新值
+		//4.receiver：代理的这个对象
+
+		set: function (target, key, newValue, receiver) {
+			// 第一种写法：监听到某个属性名新值就赋值给原对象的某个属性名
+			// target[key] = newValue;
+			// 第二种写法:也是vue3源码的写法，利用Reflect.set来实现监听新值
+			Reflect.set(target, key, newValue);
+			console.log(`监听：监听到${target[key]}的值已经被修改成了`, newValue);
+		},
+
+		get: function (target, key, receiver) {
+			console.log(`监听：${key}属性被读取了`);
+			// 第一种写法
+			// return target[key];
+			// 第二种写法
+			return Reflect.get(target, key, receiver);
+		},
+	});
+	//对这个代理对象进行值修改
+	ObjProxy.name = '小红';
+	//读取原对象看看是否修改成功
+	console.log(obj);
+</script>
