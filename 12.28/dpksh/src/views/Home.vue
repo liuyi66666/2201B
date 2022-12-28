@@ -23,21 +23,113 @@
         <div class="tong"><p class="col"></p></div>
       </div>
       <div class="ltwo">
-        <canvas id="main" style="width: 300px;"></canvas>
+        <p class="num">慕课外卖用户年龄分布&平均年龄</p>
+        <canvas id="main" style="width: 350px; height: 110px;"></canvas>
       </div>
-      <div class="lthree"></div>
-      <div class="lfour"></div>
+      <div class="lthree">
+        <canvas id="shanxing"></canvas>
+        <div class="zi">
+          <p class="num">慕课外卖登录设备</p>
+          <p class="user">User  Total Count</p>
+          <p class="coll"><span>552,041</span> <span>471,645</span> <span>371,947</span></p>
+        </div>
+        
+      </div>
+      <div class="lfour">
+        <div class="menu">
+        <p class="num">男性用户人数</p>
+        <p class="user">User  Total Count</p>
+        <p class="number">869,913</p>
+
+        </div>
+        <div class="worn">
+          <p class="num">女性用户人数</p>
+        <p class="user">User  Total Count</p>
+        <p class="number">870,006</p>
+        </div>
+      </div>
       <div class="lfive"></div>
       <div class="lsix"></div>
     </div>
     <!-- 右边部分 -->
-    <div class="rightone"></div>
+    <div class="rightone">
+      <div class="toop">
+        <div class="day">
+          <div class="img"><img src="@/assets/钱.png" alt=""></div>
+          <div class="toped">
+            <p class="daygood">今日销售额</p>
+            <p class="english">Todays  Amounal</p>
+            <p class="numm">56,998,472</p>
+          </div>
+        </div>
+        <div class="day">
+          <div class="img"><img src="@/assets/订单.png" alt=""></div>
+          <div class="toped">
+            <p class="daygood">今日订单量</p>
+            <p class="english">Todays  Amounal</p>
+            <p class="numm">3,496,490</p>
+          </div>
+        </div>
+        <div class="day">
+          <div class="img"><img src="@/assets/116皇冠.png" alt="" /></div>
+          <div class="toped">
+            <p class="daygood">今日交易用户数</p>
+            <p class="english">Todays  Amounal</p>
+            <p class="numm">758,349</p>
+          </div>
+        </div>
+        <div class="day">
+          <div class="img"><img src="@/assets/用户登录.png" alt="" /></div>
+          <div class="toped">
+            <p class="daygood">今日新增用户数</p>
+            <p class="english">Todays  Amounal</p>
+            <p class="numm">1,739919</p>
+          </div>
+        </div>
+        <div class="dayed">
+         <div class="jia">
+          <div class="j"><i class="el-icon-check"></i></div>
+          <div>
+            <p class="english">转化率</p>
+            <p class="daygood">13.00%</p>
+          </div>
+         </div>
+         <div class="jian">
+          <div class="a"><i class="el-icon-minus"></i></div>
+          <div>
+            <p class="english">退单率</p>
+            <p class="daygood">5.66%</p>
+          </div>
+         </div>
+        </div>
+      </div>
+      <!-- All地址 -->
+      <div class="address">
+        <div>ALL</div>
+        <div>北京</div>
+        <div>上海</div>
+        <div>深圳</div>
+        <div>杭州</div>
+        <div>南京</div>
+        <div>武汉</div>
+      </div>
+      <!-- all下面的部分 -->
+      <div class="botmed">
+        <div class="dt">
+          <div class="chin">
+            <chinadt></chinadt>
+          </div>
+        </div>
+        <div class="qu"></div>
+      </div>
+    </div>
     </div>
  </div>
 </template>
 
 <script>
 import * as echarts from 'echarts';
+import chinadt from "@/components/chinadt.vue"
 export default {
   data () {
     return {
@@ -156,10 +248,88 @@ optiondata.forEach((item, i) => {
 };
 
     myChart.setOption(option)
+    /**扇形统计图**/ 
+    var myChart = echarts.init(document.getElementById('shanxing'));
+
+   var option = {
+      backgroundColor:'#03213E',
+        tooltip: {
+          trigger: 'item',
+          formatter: '{b} : {c} ({d}%)',
+        },
+        legend: {
+          right: '5%',
+          top: '40%',
+          orient: 'vertical',
+          itemGap: 20,
+          itemWidth: 15,
+          itemHeight: 15,
+          textStyle: {
+            color: '#fff',
+            fontSize:14,
+          },
+          formatter: function (name) {
+            let than = option.series[0].data //获取series中的data
+            let total = 0
+            let tarValue
+            for (let i = 0, l = than.length; i < l; i++) {
+              total += than[i].value
+              if (than[i].name == name) {
+                tarValue = than[i].value
+              }
+            }
+            let p = (tarValue / total) * 100
+            return ' ' + ' '+' '+name + ' ' + ' ' + ' ' + ' ' + ' '+tarValue + '次' + ' ' + ' ' + ' ' + p.toFixed(2) + '%'
+          },
+        },
+        series: [
+          {
+            type: 'pie',
+            radius: '80%',
+            center: ['30%', '60%'],
+
+            color: ['#89a455', '#a2c068', '#b4cc80'], //'#FBFE27','rgb(11,228,96)','#FE5050'
+            data: [
+              {
+                value: 60,
+              },
+              {
+                value: 50,
+              },
+              {
+                value: 50,
+              },
+            ].sort(function (a, b) {
+              return a.value - b.value
+            }),
+            roseType: 'area',
+            label: {
+              show: false,
+            },
+            labelLine: {
+              normal: {
+                lineStyle: {
+                  color: 'rgb(98,137,169)',
+                },
+                smooth: 0.2,
+                length: 10,
+                length2: 20,
+              },
+            },
+            itemStyle: {
+              normal: {
+                shadowColor: 'rgba(0,0,0,0.45); ',
+                shadowBlur: 50,
+              },
+            },
+          },
+        ],
+      }
+      myChart.setOption(option)
 
   },
   components: {
-
+    chinadt
   },
   computed: {
 
@@ -216,8 +386,8 @@ optiondata.forEach((item, i) => {
 .leftone{
   width: 24%;
   margin: 0 8px;
-  
-  background-color: aqua;
+  overflow: hidden;
+  // background-color: aqua;
 }
 .lone{
   width: 100%;
@@ -281,11 +451,174 @@ optiondata.forEach((item, i) => {
 .ltwo{
   width: 100%;
   height: 150px;
-  background-color: orchid;
+  // background-color: orchid;
+}
+.lthree{
+  width: 100%;
+  height: 150px;
+  display: flex;
+  // background-color: #c5ea86;
+}
+#shanxing{
+  width: 40%;
+  height: 150px;
+  // background-color: #1c1c1c;
+}
+.zi{
+  width: 60%;
+  height: 150px;
+  // background-color: pink;
+}
+.coll{
+  margin: 30px 0 0 -10px;
+  color: #fff;
+}
+.lfour{
+  width: 100%;
+  height: 120px;
+  display: flex;
+  // background-color: green;
+}
+.menu{
+  width: 50%;
+  height: 120px;
+}
+.worn{
+  width: 50%;
+  height: 120px;
 }
 .rightone{
   width: 75%;
-  background-color: orange;
+  // background-color: orange;
+}
+.toop{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  // background-color: #c5ea86;
+}
+.day{
+  width: 22%;
+  height: 100px;
+  display: flex;
+  color: #fff;
+  // background-color: pink;
+}
+.dayed{
+  width: 15%;
+  height: 100px;
+  display: flex;
+  // background-color: #88a555;
+}
+.jia{
+  width: 50%;
+  height: 100px;
+  color: #fff;
+}
+.jian{
+  width: 50%;
+  height: 100px;
+  color: #fff;
+}
+.day .img{
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+  border-radius: 50%;
+  background-color: #88a555;
+}
+.day .img img{
+  width: 50px;
+  height: 50px;
+  margin: 15px 10px 10px 10px;
+}
+.daygood{
+  height: 20px;
+  font-size: 16px;
+  text-align: left;
+  line-height: 20px;
+  margin: 5px;
+}
+.english{
+  height: 20px;
+  font-size: 8px;
+  text-align: left;
+  line-height: 20px;
+  margin: 5px;
+}
+.numm{
+  height: 30px;
+  font-size: 26px;
+  font-weight: 700;
+  text-align: left;
+  line-height: 30px;
+  margin: 5px
+}
+.day .toped{
+  width: 150px;
+  height: 90px;
+  margin: 5px;
+  // background-color: orangered;
+}
+.j{
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 24px;
+  color: #454745;
+  font-weight: 700;
+  border-radius: 50%;
+  margin: 5px 0 0 8px;
+  background-color: #c5ea86;
+
+}
+.a{
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #454745;
+  border-radius: 50%;
+  margin: 5px 0 0 8px;
+  background-color: #c5ea86;
+
+}
+.address{
+  width: 100%;
+  height: 20px;
+  margin: 10px 0;
+  display: flex;
+  background-color: #35383f;
+}
+.address div{
+  flex: 1;
+  font-size: 12px;
+  height: 20px;
+  line-height: 20px;
+  color: #fff;
+  text-align: center;
+}
+.botmed{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  // background-color: plum;
+}
+.dt{
+  width: 70%;
+  background-color: blue;
+}
+.chin{
+  width: 100%;
+  height: 450px;
+  background-color: pink;
+}
+.qu{
+  width: 30%;
+  background-color: yellow;
 }
 </style>
 
