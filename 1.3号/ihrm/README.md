@@ -1,4 +1,4 @@
-# sqgl3
+# ihrm
 
 ## Project setup
 ```
